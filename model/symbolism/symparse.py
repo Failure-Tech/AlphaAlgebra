@@ -75,7 +75,13 @@ import json
 from sympy.parsing.latex import parse_latex
 from bs4 import BeautifulSoup
 
-with open("./data/Problems/problem.json", "r", encoding="utf-8") as f:
+# with open("./data/Problems/problem.json", "r", encoding="utf-8") as f:
+#     data = json.load(f)
+
+# with open("./data/Problems/problemtwo.json", "r", encoding="utf-8") as f:
+#     data = json.load(f)
+
+with open("./data/Problems/problemthree.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 # Function to extract and parse LaTeX expressions
@@ -118,5 +124,5 @@ for problem_name, problem_data in data.items():
     ]
 
 # Save updated JSON
-with open("./data/Problems/Symbolic/parsed_problem.json", "w", encoding="utf-8") as f:
+with open("./data/Problems/Symbolic/parsed_problem3.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
