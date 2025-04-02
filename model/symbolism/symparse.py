@@ -75,8 +75,9 @@ from cerebras.cloud.sdk import Cerebras
 import os
 
 print(os.environ)
+
 # Initialize Cerebras client
-api_key = "csk-9hxpm328d445wpyhvj8expnhmrpvcp8rh6d32tjmvfww8n8h"
+api_key = os.environ.get("CEREBRAS_API_KEY")
 
 client = Cerebras(
     # api_key=os.environ.get("CEREBRAS_API_KEY")
