@@ -93,8 +93,9 @@ def preprocess_with_cerebras(text):
     try:
         response = client.chat.completions.create(
             messages=[{
-                "role": "user",
-                "content": f"Please clean up and standardize all LaTeX expressions in this text for SymPy parsing. Keep the original meaning but make sure the LaTeX is properly formatted. Return the exact same text but with corrected LaTeX:\n\n{text}"
+                "role": "system",
+                # "content": f"Please clean up and standardize all LaTeX expressions in this text for SymPy parsing. Keep the original meaning but make sure the LaTeX is properly formatted. Return the exact same text but with corrected LaTeX:\n\n{text}",
+                "content": "Please clean up and standardize all LaTeX expressions in this text for SymPy parsing. Keep the original meaning but make sure the LaTeX is properly formatted. Return only corrected LaTeX expressions:\n\n{text}"
             }],
             model="llama3.1-8b",
         )
